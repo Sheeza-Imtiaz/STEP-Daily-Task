@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let marks = {
+            herry: 10,
+            suban: 20,
+            swera: 40,
+            shiza: 5
+        }
+        for(let i = 0; i<Object.keys(marks).length;i++){
+         console.log("The marks of " + Object.keys(marks)[i] + "are" + marks[Object.keys(marks)[i]])
+        }
+
+
+        for(let key in marks){
+            console.log("the marks  of " + key + " " + "are" + " " + marks[key]);
+        }
+
+       
+    </script>
+</body>
+</html>
