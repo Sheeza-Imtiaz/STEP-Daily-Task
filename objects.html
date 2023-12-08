@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+<body>
+    <script>
+        var n = prompt('Enter name of car !');
+        var c = prompt('Enter color of car !');
+        var p = parseInt(prompt('Enter price of car !'));
+    var car = {
+     name : "Carolla",
+    price : "500000",
+    company : "Toyota",
+    color : "Black"
+    }
+    car.discount = function()
+    {
+        var amount = car.price-5000;
+        document.write(amount);
+    }
+    document.write(car.name + " "+car.color +" ");
+    document.write(car.price +" ");
+    car.discount();
+
+
+    const jsuser={
+        name : "Minahil",
+        age :19,
+        location:"lahore",
+        email:"minha@gmail.com"
+    }
+    document.write(jsuser.email + " ")
+    document.write(jsuser["email"])
+    
+    jsuser.email = "minal@gmail.com"
+
+    Object.freeze(jsuser)
+
+    jsuser.email = "minal@gmail.com"
+console.log();
+
+function Person(name) {
+    this.name = name;
+}
+
+// Adding a method to the prototype
+Person.prototype.sayHello = function() {
+    console.log("Hello, my name is " + this.name);
+};
+
+// Creating an object using the constructor
+var person1 = new Person("John");
+person1.sayHello();
+
+var personPrototype = {
+    sayHello: function() {
+        console.log("Hello, my name is " + this.name);
+    }
+};
+
+var person1 = Object.create(personPrototype);
+person1.name = "Harry";
+person1.sayHello();
+</script>
+</body>
+</html>
