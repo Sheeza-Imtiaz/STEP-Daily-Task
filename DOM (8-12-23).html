@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self 1</title>
+    <!-- <link rel="stylesheet" href="self.css"> -->
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+.main{
+    border: 2px solid;
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    background-color:#f7cd9c;
+} 
+                                    /* container-1 */
+.gap{
+    margin-top: 2rem;
+}
+
+
+
+.container-1{
+    /* border: 2px solid; */
+    display: flex;
+    justify-content: center;
+    background-color: brown;
+}
+#pic img{
+    /* border: 2px solid red; */
+    border-radius: 50%;
+    height: 21rem;
+    width: 15rem;
+}
+#intro{
+    /* border: 2px solid red; */
+    margin-left: 10rem;
+    padding-top: 18rem;
+}
+
+ul{
+    list-style: none;
+}
+.container-3{
+    /* background-color: blueviolet; */
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+#footer{
+    background-color: brown;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="container-1 gap" >
+        <div id="pic">
+            <img src="iqbal.jpg" alt="Iqbal">
+        </div>
+        <div id="intro">
+            <h1>Dr Allama Iqbal</h1>
+            <p>(1877-1938)</p>
+        </div>
+    </div>
+    <div class="container-2 gap" >
+        <div id="poet">
+        <h2>Poet Of Pakistan</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, id. Quam, iste quia cum ad incidunt hic iusto veritatis perspiciatis! Dignissimos repudiandae unde distinctio expedita nihil vel optio numquam molestiae ducimus ea, at autem aspernatur accusantium voluptatum iure corrupti quod et iusto reprehenderit odio facere nam, dicta doloremque sequi. Nemo pariatur ab quidem. Tempore ex neque libero illo ut aliquid odit nihil nemo distinctio quae modi delectus commodi expedita quas sunt quidem natus saepe et nulla iste, quo ratione itaque?</p>
+        </div>
+        </div>
+        <div class="container-3 gap" >
+            <h2>Biography</h2>
+            <ul>
+                <li>item-1</li>
+                <li>item-2</li>
+                <li>item-3</li>
+                <li>item-4</li>
+                <li>item-5</li>
+                <li>item-6</li>
+                <li>item-7</li>
+            </ul>
+        </div>
+          <footer  id="footer">
+            <h2>get content</h2>
+          </footer>
+          <script>
+            // var a = document.getElementById("intro");
+            // var a = document.getElementsByClassName("container");
+            // var a = document.getElementsByTagName("li");
+            // var a = document.getElementById("poet").innerText;
+            // var a = document.getElementById("poet").innerHTML;
+            document.getElementById("poet").innerHTML = "<h2>Poet of East</h2>";
+            // document.getElementById("footer").setAttribute("style","background-color: brown;border:8px solid red;");
+            document.getElementById("footer").setAttribute("style","background-color: red;");
+            // var a = document.getElementById("poet").innerHTML;
+            // console.log(a);
+            
+
+
+          </script>
+        </body>  
+        </html>
