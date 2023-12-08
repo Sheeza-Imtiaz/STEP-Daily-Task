@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Project</title>
+<style>
+
+    button{
+        border: none;
+        outline: none;
+        background-color: darkred;
+        color: white;
+        font-size: 1.6rem;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+     #clock1{
+       
+        font-size: 3rem;
+        /* border: 2PX SOLID red; */
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        margin-top: 2rem;
+    } 
+    .clock{
+        display: none;
+    }
+    
+
+.stopwatch1{
+    /* border: 2px solid slateblue; */
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 3rem;
+}
+
+
+
+</style>
+     
+</head>
+<body>
+    
+
+
+<h1 align="center">Clock , Alaram And Stop Watch Project</h1>
+
+<!-- clock project complete -->
+<button id="clock">Clock</button>
+<div id="clock1"></div>
+
+
+<!-- stopwatch start -->
+<button id="stopwatch" onclick="start()">Start</button>
+<button id="stop" onclick="stop()">Stop</button>
+<button id="reset" onclick="reset()">Reset</button>
+
+
+<div class="stopwatch1">
+    <span class="" id="hr">00</span>
+    <span class="txt">Hr</span>
+    <span class="" id="min">00</span>
+    <span class="txt">Min</span>
+    <span class="" id="sec">00</span>
+    <span class="txt">Sec</span>
+    <span class="" id="count">00</span>
+
+</div>
+
+
+
+
+
+
+<div class="alarm">
+    <h1 id="time">00:00:00</h1>
+    <h2>Alarm at : <span id="setit"></span></h2>
+    <form>
+        <input type="number" placeholder="Hours" id="hours">
+        <input type="number" placeholder="Minutes" id="minutes">
+    </form>
+    <button onclick="setAlarm()">Set Alarm</button>
+    <button onclick="DeAlarm()">De Activate</button>
+    <audio src="alarm.m4a" id="alarmsound"></audio>
+</div>
+
+
+
+
+
+
+<script>
+
+// clock project complete
+function Clock(){
+    var time=new Date().toLocaleTimeString();
+document.getElementById('clock1').innerHTML=time;
+}
+setInterval(Clock,1000);
+var clock1=document.getElementById('clock1');
+
+document.getElementById('clock').addEventListener("click",function(){
+    clock1.classList.toggle('clock');
+})
+
+
+
+
+//stopwatch project
+
+var hr=0;
+var min=0;
+var  sec=0;
+var count=0;
+
+var timer=false;
+
+function start(){
+    timer=true;
+    stopwatch();
+}
+
+
+function stop(){
+    timer=false;
+    stopwatch();
+}
+function reset(){
+
+var hr=0;
+var min=0;
+var sec=0;
+var count=0;
+
+document.getElementById('hr').innerHTML="0"+hr;
+document.getElementById('min').innerHTML="0"+min;
+document.getElementById('sec').innerHTML="0"+sec;
+document.getElementById('count').innerHTML="0"+count;
+
+
+
+}
+function stopwatch(){
+if(timer==true){
+count=count+1;
+if(count == 100){
+    sec=sec+1;
+    count=0;
+}
+if(sec == 60){
+    min=min+1;
+    sec=0;
+}
+if(min==60){
+    hr=hr+1;
+    min=0;
+}
+
+var hrstring=hr;
+var minstring=min;
+var secstring=sec;
+
+if(hr<10){
+    hrstring="0"+hrstring;
+}
+if(min<10){
+    minstring="0"+minstring;
+}
+if(sec<10){
+    secstring="0"+secstring;
+}
+
+document.getElementById('count').innerHTML=count;
+document.getElementById('sec').innerHTML=secstring;
+document.getElementById('min').innerHTML=minstring;
+document.getElementById('hr').innerHTML=hrstring;
+
+setTimeout("stopwatch()",10)
+    
+}
+
+}
+
+
+
+
+
+setInterval(()=>{
+    let time=new Date();
+    document.getElementById('time').innerHTML=time.toLocaleTimeString();
+},1000)
+
+
+function setAlarm(){
+let h=document.getElementById('hours').value;
+let m=document.getElementById('minutes').value;
+document.getElementById('setit').innerHTML=h+":"+m+":"+"00";
+// document.getElementById('setit').value="";
+
+}
+
+let checkinterval=setInterval(() => {
+    let alarmtime=document.getElementById('setit').innerHTML;
+    alarmtime=alarmtime.split(":");
+    let alarhours=alarmtime[0];
+    let alarminute=alarmtime[1];
+    let system=new Date();
+    let syshour=system.getHours();
+    let sysmin=system.getMinutes();
+    if(syshour>12){
+        syshour=syshour-12;
+    }
+if(alarhours==syshour && alarminute==sysmin){
+    let sound=document.getElementById('alarmsound');
+    sound.play();
+}
+
+},1000);
+
+function DeAlarm(){
+    location.reload();
+}
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
