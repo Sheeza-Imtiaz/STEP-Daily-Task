@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        // objects
+    
+        // let lecture = 10;
+        // let section = 3;
+        // let title = 'javascript';
+        
+        // const course = {
+        // lecture: 10,
+        // section: 3,
+        // title: 'javascript',
+        // notes: {
+        //     introduction: "welcome to js objects"
+        // },
+        // enroll() {
+        //     console.log('you are successfuly enrolled');
+        // }
+        // }
+        
+        // course.enroll()
+        // console.log(course)
+
+        // course.price = 999
+
+        // other example 
+
+//         const person = {};
+// person.firstName = "John";
+// person.lastName = "Doe";
+// person.age = 50;
+// person.eyeColor = "blue"; 
+
+// document.getElementById("demo").innerHTML =
+// person.firstName + " is " + person.age + " years old.";
+
+
+
+
+
+        // efficient ways of js 
+        // factory function in objects
+
+        // function createCourse(title){
+        //     return {
+        //         title: title,
+        //         enroll(){
+        //             console.log('you are successfully enrolled');
+        //         }
+        //     }
+        // }
+        // const course = createCourse('javascript');
+        // course.enroll()
+        // console.log(course)
+
+
+
+
+        // construction function 
+        
+        // function Course(title){
+        //     this.title = title,
+        //     this.enroll = function(){
+        //         console.log('you are enrooled');
+        //     }
+        // }
+        // const course = new Course('javascript is done');
+        // delete course.title;
+        // course.checkEnrollment = function(){
+        //     console.log('30 particpent are enrolled');
+        // }
+        // course.enroll()
+        // console.log(course);
+
+
+
+
+        // find the constructor 
+        // console.log(course.constructor)
+
+
+
+
+
+        // nested javascript objects 
+
+        // let x = "" ;
+        // const myObj = {
+        //     name: "Shiza",
+        //     age: 22,
+        //     friend: [
+        //         {name: "sawera", details:["30", "BSIT" ,"Mansiarh"] },
+        //         {name: "minahil", details:["28", "BSIT" ,"Islamabad"] },
+        //         {name: "shazia", details:["33", "BSIT" ,"Dubai"] },
+        //     ]
+        // }
+        // for (let i in myObj.friend) {
+        //     x += "<h2>" + myObj.friend[i].name + "</h2>";
+        //     for (let j in myObj.friend[i].details){
+        //         x += myObj.friend[i].details[j] + "<br>";
+        //     }
+        // }
+        // document.write(x);
+
+
+
+        // // for in loop in object 
+
+        // let person ={
+        //     firstName: 'shiza',
+        //     lastName: 'imtiaz',
+        //     age: 20
+        // };
+        // for(let key in person){
+        //     console.log(key + ': '+person[key]);
+        // };
+
+
+        // // array in objects 
+
+        // let me = {
+        //     firstName : 'sheza',
+        //     lastName: 'imtiaz',
+        //     age:20,
+        //     fullName : function(){
+        //         return 20000;
+        //     }
+        // };
+        // console.log(me.salary());
+
+
+
+
+
+        // Constructor function
+function Person(name) {
+    this.name = name;
+}
+// Adding a method to the prototype
+Person.prototype.sayHello = function() {
+    console.log("Hello, myself " + this.name);
+};
+// Creating objects
+var person1 = new Person("ali");
+var person2 = new Person("shazil");
+// Using the shared method
+person1.sayHello(); 
+person2.sayHello();
+
+
+
+
+
+        </script>
+</body>
+</html>
