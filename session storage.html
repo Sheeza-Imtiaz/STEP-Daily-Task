@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <script>
+        // sessionStorage
+
+        sessionStorage.setItem("name","minahil")
+
+        // StorageEvent
+
+        window.onstorage = (e)=>{
+            alert("changed")
+            console.log(e)  
+        }
+
+        // cookie 
+
+        console.log(document.cookie)
+        document.cookie = "name=ali112233"
+        document.cookie = "name2=ali1122334455"
+        console.log(document.cookie)
+    </script>
+</body>
+</html>
