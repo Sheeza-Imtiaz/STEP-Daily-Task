@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <h1 id="res"></h1>
+    <button onclick="pop()">pop</button>
+    <button onclick="push()">push</button>
+    <button onclick="slice()">slice</button>
+    <button onclick="reverse()">reverse</button>
+    <button onclick="shift()">shift</button>
+</head>
+<body>
+    <script>
+        var cars = [];    //Declaration of an array
+        cars = ["car1", "car2", "car3"];    //Fill arrays value (Name of cars)
+        
+        cars[4] = "car7"        //Declare value on run time.
+
+//Keys store in this following method[0,1,2,3....]
+
+        document.write(cars[2]);
+
+//Second method to declare an array 
+
+        var car = new Array(); //define car variable with new Array 
+
+        car = ["car1", "car2", "car3"];
+
+        car[5] = "car7"
+
+        document.write(car[5])
+
+
+         //Array Methods
+
+//isArray
+
+      var fruits = ["mango","apple","grapes","pineapple"];
+      // alert(Array.isArray(arr));
+      var flag = Array.isArray(fruits);
+      document.write("<h2>" + flag + "</h2>");
+
+//valueOf
+
+      var fruits = ["mango","apple","grapes","pineapple"];
+      // alert(Array.isArray(arr));
+     var flag = fruits.valueOf(fruits);
+     document.write("<h2>" + flag + "</h2>");
+
+//join
+
+     var fruits = ["mango","apple","grapes","pineapple"];
+     // var flag = fruits.join(" || ");
+     // var flag = fruits.join(" | ");
+     var flag = fruits.join(" ! ");
+     document.write("<h2>" + flag + "</h2>");
+
+
+//Concat 
+
+     var fruits = ["mango","apple","grapes","pineapple"];
+     var vegitable = ["cabbage","ladyfinger","tomato"];
+
+   // var shop = fruits.concat(vegitable);
+   var shop = vegitable.concat(fruits);
+   document.write("<h2>" + shop + "</h2>");
+
+//First method of indexOf with concat
+
+    var fruits = ["mango","apple","grapes","pineapple"];
+    var vegitable = ["cabbage","ladyfinger","tomato"];
+
+    // var shop = fruits.concat(vegitable);
+    var shop = vegitable.concat(fruits);
+    var index = shop.indexOf("apple")
+    document.write("<h3>" + index + "</h3>");
+
+//Second method of indexOf without concat
+
+   var fruits = ["mango","apple","grapes","pineapple"];
+
+   var index = vegitable.indexOf("grapes") //if we check apple in vegitable list it gives minus(-) value bcz we would nt be declared vegitable  
+   var index = fruits.indexOf("grapes")
+   document.write("<h3>" + index + "</h3>");
+
+
+
+// var fruits = ["mango","apple","grapes"];
+// var h1=document.createElement("h1");
+// document.write(h1.innerHTML=fruits);
+
+var fruits = ["mango","apple","banana","grapes"];
+var demo = fruits;
+document.getElementById('res').innerText = demo;
+
+
+//pop
+
+
+function pop(){
+     // if we addd user input
+   var x = prompt("please remove a fruit");
+demo.pop(x);
+    // demo.pop();
+    document.getElementById('res').innerText = demo;
+}
+
+
+//push
+
+
+function push(){
+   // if we addd user input
+   var x = prompt("please enter a fruit");
+demo.push(x);
+    // demo.push("pineapple");    //add new element in the array
+    document.getElementById('res').innerText = demo;
+}
+
+//slice ()
+
+
+function slice(){
+    var x = demo.slice(2);
+    // var x = demo.slice(2,2);
+    document.getElementById('res').innerText = x;
+}
+
+//reverse  (sort elements in decending order)
+
+function reverse(){
+    demo.reverse()
+    document.getElementById('res').innerText = demo;
+}
+
+//shift (remove first element of an array)
+
+
+function shift(){
+    demo.shift()
+    document.getElementById('res').innerText = demo;
+}
+    </script>
+</body>
+</html>
