@@ -1,3 +1,477 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Project</title>
+<style>
+
+
+
+.head{
+    margin-top: 3rem;
+    font-size: 3rem;
+    color: orangered;
+    background-color: black;
+}
+.clocke{
+        /* border: 2px solid red; */
+        align-items: center;
+        text-align: center;
+        width: 50%;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+    #clock{
+        border: none;
+        outline: none;
+        background-color: darkred;
+        color: white;
+        font-size: 1.6rem;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+
+    .stopwatch{
+        /* border: 2px solid red; */
+        align-items: center;
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 2rem;   
+    }
+    #stopwatch1{
+        background-color: black;
+    }
+    #stopwatch{
+        border: none;
+        outline: none;
+        background-color: darkred;
+        color: white;
+        font-size: 1.6rem;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #stop{
+        border: none;
+        outline: none;
+        background-color: darkred;
+        color: white;
+        font-size: 1.6rem;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #reset{
+        border: none;
+        outline: none;
+        background-color: darkred;
+        color: white;
+        font-size: 1.6rem;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #stopwatch2{
+        border: none;
+        outline: none;
+        background-color: darkred;
+        color: white;
+        font-size: 1.6rem;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+     #clock1{
+       
+        font-size: 3rem;
+        /* border: 2PX SOLID red; */
+        width: 40%;
+        margin: auto;
+        text-align: center;
+        margin-top: 2rem;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        margin-bottom: 2rem;
+    } 
+    .clock{
+        display: none;
+    }
+
+    
+
+.stopwatch1{
+    /* border: 2px solid slateblue; */
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 3rem;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /* display: none; */
+}
+.hr{
+    color: aqua;
+    font-size: 4rem;
+}
+.min{
+    color: orangered;
+    font-size: 4rem;
+}
+.sec{
+    color: cadetblue;
+    font-size: 4rem;
+}
+.mili{
+    color: tomato;
+    font-size: 4rem;
+}
+
+#clock1{
+    display: none;
+}
+#stopwatch1{
+    display: none;
+}
+
+
+/* alaram start */
+.outer{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+#show{
+    border: none;
+        outline: none;
+        background-color: darkred;
+        color: white;
+        font-size: 1.6rem;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+#alarm{
+    display: none;
+}
+
+#time{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: 30%;
+    margin: auto;
+    margin-top: 2rem;
+}
+#setit{color: orangered;
+font-size: 2rem;
+background-color:black;
+}
+
+form [type='number']{
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    background-color: bisque;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+#set{
+    border: none;
+        outline: none;
+        background-color:darkgreen;
+        color: white;
+        font-size: 1.6rem;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+#del{
+    border: none;
+        outline: none;
+        background-color:darkred;
+        color: white;
+        font-size: 1.6rem;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+@media (max-width:700px){
+    #clock1{
+        width: 60%;
+    }
+    #time{
+        width: 70%;
+    }
+}
+
+</style>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     
+</head>
+<body>
+    
+
+
+<h1 class="head" align="center"  data-aos="fade-up"
+data-aos-duration="3000">Clock , Stop Watch And Alaram Project</h1>
+
+<!-- clock project complete -->
+<div class="clocke">
+<button id="clock">Clock</button>
+<div id="clock1"></div>
+</div>
+
+<!-- stopwatch start -->
+<div class="stopwatch">
+    <button id="stopwatch2">View</button>
+<button id="stopwatch" onclick="start()">Start</button>
+<button id="stop" onclick="stop()">Stop</button>
+<button id="reset" onclick="resete()">Reset</button>
+
+
+<div class="stopwatch1" id="stopwatch1">
+    <span class="hr" id="hr">00</span>
+    <span class="txt">Hr</span>
+    <span class="min" id="min">00</span>
+    <span class="txt">Min</span>
+    <span class="sec" id="sec">00</span>
+    <span class="txt">Sec</span>
+    <span class="mili" id="count">00</span>
+
+</div>
+
+
+</div>
+
+<!-- alarm  -->
+
+
+<div class="outer">
+    <button id="show">Show Alarm</button>
+<div class="alarm" id="alarm">
+    <h1 id="time">00:00:00</h1>
+    <h2>Alarm at : <span id="setit"></span></h2>
+    <form>
+        <input type="number" placeholder="Hours" id="hours">
+        <input type="number" placeholder="Minutes" id="minutes">
+    </form>
+    <button onclick="setAlarm()" id="set">Set Alarm</button>
+    <button onclick="DeAlarm()" id="del">De Activate</button>
+    <audio src="alarm.m4a" id="alarmsound"></audio>
+</div>
+</div>
+
+
+
+
+<!-- <script src="clock project.js"></script> -->
+
+<!-- <script type="text/javascript" src="clock project.js"></script> -->
+
+
+
+
+<script>
+
+
+
+/* // clock project complete */
+function Clock(){
+    var time=new Date().toLocaleTimeString();
+document.getElementById('clock1').innerHTML=time;
+}
+setInterval(Clock,1000);
+var clock1=document.getElementById('clock1');
+
+document.getElementById('clock').addEventListener("click",function(){
+    if(clock1.style.display=="none"){
+        clock1.style.display="block";
+    }else{
+        clock1.style.display="none"
+    }
+})
+
+
+
+
+//stopwatch project
+
+var hr=0;
+var min=0;
+var  sec=0;
+var count=0;
+
+var timer=false;
+
+
+var sta=document.getElementById('stopwatch2');
+sta.addEventListener("click",function(){
+    var swatch=document.getElementById('stopwatch1');
+   console.log(swatch)
+   if(swatch.style.display=="none"){
+    swatch.style.display="block";
+    sta.innerHTML="hide";
+   }else{
+    swatch.style.display="none";
+    sta.innerHTML="view";
+   }
+})
+
+function start(){
+
+    timer=true;
+    stopwatch();
+}
+
+
+function stop(){
+    timer=false;
+    stopwatch();
+}
+function resete(){
+timer=false;
+stopwatch();
+ hr=0;
+ min=0;
+ sec=0;
+ count=0;
+
+document.getElementById('hr').innerHTML="00";
+document.getElementById('min').innerHTML="00";
+document.getElementById('sec').innerHTML="00";
+document.getElementById('count').innerHTML="00";
+
+
+
+}
+function stopwatch(){
+if(timer==true){
+count=count+1;
+if(count == 100){
+    sec=sec+1;
+    count=0;
+}
+if(sec == 60){
+    min=min+1;
+    sec=0;
+}
+if(min==60){
+    hr=hr+1;
+    min=0;
+}
+
+var hrstring=hr;
+var minstring=min;
+var secstring=sec;
+
+if(hr<10){
+    hrstring="0"+hrstring;
+}
+if(min<10){
+    minstring="0"+minstring;
+}
+if(sec<10){
+    secstring="0"+secstring;
+}
+
+document.getElementById('count').innerHTML=count;
+document.getElementById('sec').innerHTML=secstring;
+document.getElementById('min').innerHTML=minstring;
+document.getElementById('hr').innerHTML=hrstring;
+
+setTimeout("stopwatch()",10)
+    
+}
+
+}
+
+
+
+
+
+// alarm start
+
+document.getElementById('show').addEventListener("click",function(){
+    var alarrm=document.getElementById('alarm');
+    if(alarrm.style.display=="none"){
+        alarrm.style.display="block";
+        document.getElementById('show').innerHTML="Hide Alarm";
+    }else{
+        alarrm.style.display="none";
+        document.getElementById('show').innerHTML="Show Alarm";
+    }
+})
+
+
+
+setInterval(()=>{
+    let time=new Date();
+    document.getElementById('time').innerHTML=time.toLocaleTimeString();
+},1000)
+
+
+function setAlarm(){
+    let h=document.getElementById('hours').value;
+let m=document.getElementById('minutes').value;
+    if(h =="" && m==""){
+    alert("please filled the fields");
+}else{
+    document.getElementById('setit').innerHTML=h+":"+m+":"+"00";
+}
+
+
+}
+
+let checkinterval=setInterval(() => {
+    let alarmtime=document.getElementById('setit').innerHTML;
+    alarmtime=alarmtime.split(":");
+    let alarhours=alarmtime[0];
+    let alarminute=alarmtime[1];
+    let system=new Date();
+    let syshour=system.getHours();
+    let sysmin=system.getMinutes();
+    if(syshour>12){
+        syshour=syshour-12;
+    }
+if(alarhours==syshour && alarminute==sysmin){
+    let sound=document.getElementById('alarmsound');
+    sound.play();
+}
+
+},1000);
+
+function DeAlarm(){
+    location.reload();
+}
+
+
+
+
+
+
+
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+
+</body>
+=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -233,4 +707,5 @@ function DeAlarm(){
 </script>
 
 </body>
+>>>>>>> ff73e3f603a95920576c412525e53ac5590870d9
 </html>
