@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #blue{
+            background-color: blue;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #green{
+            background-color:green ;
+        }
+        #grey{
+            background-color: grey;
+        }
+        #red{
+            background-color: red;
+        }
+        .button{
+            height: 100px;
+            width: 100px;
+            border: 3px solid ;
+        }
+    </style>
+</head>
+<body style="display: flex;">
+    <div class="button" id="blue"></div>
+    <div class="button" id="yellow"></div>
+    <div class="button" id="green"></div>
+    <div class="button" id="grey"></div>
+    <div class="button" id="red"></div>
+    <script>
+     document.getElementById("blue").addEventListener("click",function(){
+        var bod=document.querySelector("body");
+   
+
+    if(bod.style.backgroundColor=="blue"){
+        bod.style.backgroundColor="white";
+    }else{
+        bod.style.backgroundColor="blue"; 
+    }
+     })
+     document.getElementById("yellow").addEventListener("click",function(){
+        var bod =document.querySelector("body");
+        if(bod.style.backgroundColor=="yellow"){
+        bod.style.backgroundColor="white";
+    }else{
+        bod.style.backgroundColor="yellow"; 
+    }
+     })
+     document.getElementById("green").addEventListener("click",function(){
+        var bod =document.querySelector("body");
+        if(bod.style.backgroundColor=="green"){
+        bod.style.backgroundColor="white";
+    }else{
+        bod.style.backgroundColor="green"; 
+    }
+     })
+     document.getElementById("grey").addEventListener("click",function(){
+        var bod =document.querySelector("body");
+        if(bod.style.backgroundColor=="grey"){
+        bod.style.backgroundColor="white";
+    }else{
+        bod.style.backgroundColor="grey"; 
+    }
+     })
+     document.getElementById("red").addEventListener("click",function(){
+        var bod =document.querySelector("body");
+        if(bod.style.backgroundColor=="red"){
+        bod.style.backgroundColor="white";
+    }else{
+        bod.style.backgroundColor="red"; 
+    }
+     })
+    </script>
+</body>
+</html>
