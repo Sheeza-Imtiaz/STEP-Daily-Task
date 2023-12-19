@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        /* text-align: center; */
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+    }
+
+    label {
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+    table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+.upd{
+    display: none;
+}
+</style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Biographical Information</h1>
+        <!-- <form id="bioForm" method="post"> -->
+            <label for="firstName"> Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+<!-- 
+            <label for="bio">Short Bio:</label>
+            <textarea id="bio" name="bio" rows="4" required></textarea> -->
+
+            <button type="submit" id="sub" class="sub" onclick="">Submit</button>
+            <button type="submit" id="upd" class="upd" onclick="">Update</button>
+        <!-- </form> -->
+    </div>
+
+
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            
+                <th>Action</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            </table>
+
+
+
+
+
+<script>
+    function validation(){
+        var fname=document.getElementById('firstName').value;
+        var email=document.getElementById('email').value;
+        var dob=document.getElementById('dob').value;
+        // var bio=document.getElementById('bio').value;
+
+        if(fname==""){
+            alert("please filled it");
+            return false;
+        }
+        if(email==""){
+            alert("please flled it");
+            return false;
+        }
+        if(dob==""){
+            alert("please flled it");
+            return false;  
+        }
+        // if(bio==""){
+        //     alert("please flled it");
+        //     return false;  
+        // }
+    }
+// var btn=document.getElementById("sub");
+document.getElementById("sub").addEventListener("click",function(){
+// e.preventDefault();
+console.log("it is working")
+    var fname=document.getElementById('firstName').value;
+        var email=document.getElementById('email').value;
+        var dob=document.getElementById('dob').value;
+        // var bio=document.getElementById('bio').value;
+        var peoplelist;
+        if(localStorage.getItem("peoplelist")==null){
+            peoplelist=[];
+        }else{
+            peoplelist=JSON.parse(localStorage.getItem("peoplelist"));
+        }
+        peoplelist.push({
+            fname:fname,
+            email:email,
+            dob:dob
+            // bio:bio
+        })
+        localStorage.setItem("peoplelist",JSON.stringify(peoplelist));
+       
+        showdata();
+        document.getElementById('firstName').value=="";
+        document.getElementById('email').value=="";
+        document.getElementById('dob').value==""; 
+})
+    
+    
+    
+
+    function showdata(){
+        var peoplelist;
+        if(localStorage.getItem("peoplelist")==null){
+            peoplelist=[];
+        }else{
+            peoplelist=JSON.parse(localStorage.getItem("peoplelist"))
+        }
+        var html="";
+        peoplelist.forEach(function(elem,ind){
+            html +="<tr>";
+                html+="<td>"+elem.fname+"</td>";
+                html+="<td>"+elem.email+"</td>";
+                html+="<td>"+elem.dob+"</td>";
+                // html+="<td>"+elem.bio+"</td>";
+                html+="<td>";
+                html+='<button onclick="deletedata('+ind+')" class="btn btn-danger">Delete</button> <button onclick="update('+ind+')" class="btn btn-warning"> Update </button>';
+            html+="</td>";
+                html +="</tr>";
+        });
+        document.querySelector("#table tbody").innerHTML=html;
+    }
+    document.onload=showdata();
+
+
+
+
+
+    function deletedata(ind){
+    var peoplelist;
+    if(localStorage.getItem("peoplelist")==null){
+        peoplelist=[];
+    }else{
+        peoplelist=JSON.parse(localStorage.getItem("peoplelist"));
+    }
+    peoplelist.splice(ind,1);
+    localStorage.setItem("peoplelist",JSON.stringify(peoplelist));
+    showdata();
+    }
+
+    function update(ind){
+        document.getElementById('sub').style.display="none";
+        document.getElementById('upd').style.display="block";
+        var peoplelist;
+        if(localStorage.getItem("peoplelist")==null){
+            peoplelist=[];
+        }else{
+            peoplelist=JSON.parse(localStorage.getItem("peoplelist")); 
+        }
+        document.getElementById('firstName').value=peoplelist[ind].fname;
+        document.getElementById('email').value=peoplelist[ind].email;
+        document.getElementById('dob').value=peoplelist[ind].dob;
+        document.getElementById("upd").onclick=function(){
+peoplelist[ind].fname=document.getElementById('firstName').value;
+peoplelist[ind].email=document.getElementById('email').value;
+peoplelist[ind].dob=document.getElementById('dob').value;
+localStorage.setItem("peoplelist",JSON.stringify(peoplelist));
+showdata();
+document.getElementById('firstName').value=="";
+        document.getElementById('email').value=="";
+        document.getElementById('dob').value=="";
+        document.getElementById('sub').style.display="block";
+        document.getElementById('upd').style.display="none";
+        }
+    }
+</script>
+
+
+
+
+</body>
+</html>
