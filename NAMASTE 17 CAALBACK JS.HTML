@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="demo"></div>
+
+<script>
+
+// callback function
+
+
+setTimeout(() => {
+    console.log("timer called")
+}, 5000);
+
+function x(y){
+    console.log("x");
+    y();
+}
+x(function y(){
+    console.log("y");
+})
+
+
+
+
+
+
+function display(some){
+document.getElementById("demo").innerHTML=some;
+}
+function mycalc(num1,num2){
+    return num1+num2;
+}
+
+display(mycalc(2,3));
+</script>
+
+
+</body>
+</html>

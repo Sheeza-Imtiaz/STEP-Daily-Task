@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<div id="demo"></div>
+
+
+<script>
+
+//     let complete=false;
+//     let prom=new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             if(complete){
+//     resolve();
+// }else{
+//     reject();
+// }
+//         },5000)
+//         console.log("welcome to promises")
+// // if(complete){
+//     resolve();
+// }else{
+//     reject();
+// }
+    // })
+    // prom.then(()=>{
+    //     console.log("successful")
+    // });
+    // prom.catch(()=>{
+    //     console.log("failed")
+    // })
+
+
+
+function mydisplay(some){
+    document.getElementById("demo").innerHTML=some;
+}
+
+
+let prom=new Promise(function(resolve,reject){
+    let req=new XMLHttpRequest();
+    req.open('GET','bgimg.jpg');
+    req.onload=function(){
+        if(req.status==200){
+            resolve(req.response)
+        }else{
+            reject("file not found")
+        }
+    };
+    req.send();
+});
+
+
+
+prom.then((value)=>{
+    mydisplay(value)
+});
+prom.catch((err)=>{
+    mydisplay(err)
+});
+
+
+
+</script>
+
+</body>
+</html>

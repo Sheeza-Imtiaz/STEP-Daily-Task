@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- closure in js  -->
+
+<script>
+    function x(){
+        var a=9;
+        function y(){
+            console.log(a);
+        }
+        // it return complete y function with its lxical environembt
+        return y;
+    }
+    var c=x();
+    console.log(c);
+    // it will print value because it return its lexical envronembt in its lexical environembt we fetch value of A
+    c();
+</script>
+</body>
+</html>

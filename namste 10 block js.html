@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // {} this is block also know as comppound statement group multiple js lines
+        // we use it where js aspect one statement 
+
+        // it expect single statement if we want more then one statement so we use {} block scope
+
+        var a=10000;
+        if(true){
+            // it is shadowing the outside variabale a 
+            var a=10;
+            console.log(a);
+            var b=100;
+            let c=10;
+            const d=20;
+        }
+        console.log("it print same value outside also "+a)
+        console.log(b);
+        console.log(c);
+        console.log(d);
+    </script>
+</body>
+</html>

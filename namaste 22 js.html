@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<script>
+
+
+const arr=[5,10,15,20];
+
+// double
+// triple
+
+function double(x){
+    return x*2;
+}
+function binary(x){
+    return x.toString(2);
+}
+const output=arr.map(binary);
+console.log(output)
+
+
+
+
+const brr=[11,12,13,14,15,16];
+const data=brr.filter((ele)=>{
+    if(ele%2==0){
+        console.log(ele);
+    }
+})
+
+const dat=brr.map((fet)=>{
+    if(fet%2==0){
+        console.log(fet)
+    }
+})
+
+
+const user=[
+    {firstname:"akshay",lastname:"kumar",age:50},
+    {firstname:"alliy",lastname:"butt",age:22},
+    {firstname:"alliy",lastname:"butt",age:22},
+    {firstname:"aryan",lastname:"butt",age:21}
+];
+
+
+
+
+
+
+const futput=user.reduce(function(acc,cur){
+if(acc[cur.age]){
+    acc[cur.age]= ++acc[cur.age]
+}else{
+    acc[cur.age]=1
+}
+return acc;
+},{})
+
+console.log(futput);
+
+
+
+
+const dtput=user.filter((x)=>x.age<30
+).map((x)=>x.firstname)
+console.log(dtput);
+
+
+
+</script>
+
+
+</body>
+</html>
