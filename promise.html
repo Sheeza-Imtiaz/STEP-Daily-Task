@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        const cart = ["shoes", "pants", "kurta"];
+
+        const promise = createOrder(cart); //orderId
+        console.log(promise);
+
+        promise.then(function(orderId){
+            console.log(orderId);
+            // proceedToPayment(orderId);
+        })
+        // Producer
+        function createOrder(cart){
+            const pr = new Promise(function(resolve, reject){
+                // createOrder
+                // ValidateCart
+                // orderId
+                is(!validate(Cart)){
+                    const err = new Error("Cart is not valid");
+                    reject(err);
+                }
+                // logic for createOrder
+                const orderId = "12345";
+                if (orderId) {
+                    setTimeout(function() {
+                    resolve(orderId);
+                    }, 5000);
+                  
+                }
+            });
+            return pr;
+        }
+         function ValidateCart(cart){
+            return true;
+         }
+
+
+
+        //  error handling we should  handle the errors 
+        const cart = ["shoes", "pants", "kurta"];
+
+const promise = createOrder(cart); //orderId
+console.log(promise);
+// this is the success part if it run the otherwise there is fail part with catch function 
+promise.then(function(orderId){
+    console.log(orderId);
+    // proceedToPayment(orderId);
+})
+.catch(function (err){
+    console.log(err.message);
+});
+// Producer
+function createOrder(cart){
+    const pr = new Promise(function(resolve, reject){
+        // createOrder
+        // ValidateCart
+        // orderId
+        is(!validate(Cart)){
+            const err = new Error("Cart is not valid");
+            reject(err);
+        }
+        // logic for createOrder
+        const orderId = "12345";
+        if (orderId) {
+            setTimeout(function() {
+            resolve(orderId);
+            }, 5000);
+          
+        }
+    });
+    return pr;
+}
+ function ValidateCart(cart){
+    return false;
+    // if we write false in the position of true its mean we can't handle errors 
+ }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
