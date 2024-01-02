@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Document</title>
+</head>
+<body>
+    <script>
+        
+
+        // ES6
+        // Rest 4 spread operator
+        // Example rest 
+
+        function addNumbers(a,b,c,...other){
+            console.log(other)
+            return a+b+c;
+        }
+        const res = addNumbers(2,5,6,8,9,7,4.1)
+        console.log(res);
+
+
+        // spread example
+        var names = ["ajay", "anuj", "vivek", "arjun"];
+        function getNames(name1, name2, name3){
+            console.log(name1, name2, name3)
+        }
+        getNames(names[0], names[1], names[2], names[3])
+        getNames(...names)
+        getNames(names);
+
+         // object ke sath Rest 
+        var students = {
+            name: "shizz",
+            age:"11",
+            hobbies:["cricket","singing"]
+        }
+        // const age = students.age;
+        // array distructing 
+        const {age,...rest} = students;
+        console.log(rest);
+
+
+        // spread ke sath 
+        var newStudent = {
+            ...students,
+            age: "20"
+        }
+        console.log(newStudent);
+
+        
+        // asyns js programming 
+        // callbacks , promises ,async $ await 
+
+        // const datas = [
+        //     {name:"shizz", profression:"software engineer"},
+        //     {name:"salman", profression: "graphic designer"}
+        // ];
+        // function getDatas(){
+        //     setTimeout(() => {
+        //         let output = "";
+        //         datas.forEach((data,index)=>{
+        //             output += `<li>${data.name}</li>`;
+        //         })
+        //         document.body.innerHTML = output
+        //     }, 1000);
+        // }
+        // function createdata( newdata,callback){
+        //     setTimeout(() => {
+        //         datas.push(newdata);
+        //         callback();
+        //     }, 3000);
+        // } 
+        // createdata({name:"smily", profression: "doctor"},getDatas);
+
+
+
+
+
+
+
+
+        // promises 
+        
+        // const datas = [
+        //     {name:"shizz", profression:"software engineer"},
+        //     {name:"salman", profression: "graphic designer"}
+        // ];
+        // function getDatas(){
+        //     setTimeout(() => {
+        //         let output = "";
+        //         datas.forEach((data,index)=>{
+        //             output += `<li>${data.name}</li>`;
+        //         })
+        //         document.body.innerHTML = output
+        //     }, 1000);
+        // }
+        // function createdata( newdata){
+
+        //     return new Promise((resolve,reject)=>{
+        //     setTimeout(() => {
+        //         datas.push(newdata);
+        //         let error = true;
+        //         if(!error){
+        //             resolve();
+        //         }else{
+        //             reject("kuch thk nahi ha...")
+        //         }
+        //     }, 3000);  
+        //     })
+        // } 
+        // createdata({name:"smily", profression: "doctor"}).then().catch(err => console.log(err));
+
+
+
+
+
+
+            // async or await 
+            
+        // const datas = [
+        //     {name:"shizz", profression:"software engineer"},
+        //     {name:"salman", profression: "graphic designer"}
+        // ];
+        // function getDatas(){
+        //     setTimeout(() => {
+        //         let output = "";
+        //         datas.forEach((data,index)=>{
+        //             output += `<li>${data.name}</li>`;
+        //         })
+        //         document.body.innerHTML = output
+        //     }, 1000);
+        // }
+        // function createdata(newdata){
+        //     return new Promise((resolve,reject)=>{
+        //     setTimeout(() => {
+        //         datas.push(newdata);
+        //         let error = true;
+        //         if(!error){
+        //             reject("kuch thk nahi ha...")
+        //         }else{
+        //             resolve();
+        //         }
+        //     }, 3000);  
+        //     })
+        // } 
+        // async function start(){
+        //     await createdata({name:"opps", profression:"trvaller"})
+        //     getDatas();
+        // }
+        // start();
+
+
+
+
+        // closures -> new trick se 
+
+        // var sum = function(a){
+        // console.log("live viewers" +a);
+        // var c = 4;
+        // return function(b){
+        //     return a+b+c;
+        // }
+        // }
+        // var store = sum (200); //calling
+        // console.log(store(5))
+
+
+        // var sum = function(a,b,c){
+        //     return{
+        //         getSumTwo:function(){
+        //             return a+b;
+        //         },
+        //         getSumThree:function(){
+        //             return a+b+c;                }
+        //     }
+        // }
+        // sum(3,4,5); //calling
+        // console.log(store.getSumTwo())
+        // console.log(store.getSumThree())
+
+        // var store1 = sum(7,8,9);
+
+        // console.log(store1.getSumTwo())
+        // console.log(store.getSumThree())
+
+    
+
+        // prototype function 
+        // arr.__proto__. 
+        let object = {
+            name:"shhizz",
+            city:"lahore",
+            getIntro:function(){
+                console.log(this.name + "from" + this.city);
+        }
+    }
+    let object2 = {
+        name: "adi"
+    }
+    // never do this 
+    object2.__proto__ = object;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
