@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reactjs</title>
+</head>
+<body>
+    <script>
+
+
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// const myElement = <h1>I Love JSX!</h1>;
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(myElement);
+
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// const myElement = React.createElement('h1', {}, 'I do not use JSX!');
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(myElement);
+
+
+
+
+// import React from 'react';
+// import './App.css';
+// const name = <span> hello react </span>;
+// function App(){
+//     return(
+//         <div className = "App">
+//             <h1>Hello Technical Sunjay ,{name}</h1>
+//             </div>
+//     );
+// }
+// export default App;
+
+
+
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<h1>Hello, world!</h1>);
+
+
+
+
+// const element = <h1>Hello, world!</h1>;
+
+
+// const name = 'Josh Perez';
+// const element = <h1>Hello, {name}</h1>;
+
+
+function formatName(user){
+    return user.firstName + ' ' + user.lastName;
+}
+const user = {
+    firstName: "shizz",
+    lastName:"mehru"
+};
+const element =(
+    <h1>
+        hello,{formatName(user)}!
+            </h1>
+);
+
+
+
+
+
+function getGreeting(user) {
+  if (user) {
+    return <h1>Hello, {formatName(user)}!</h1>;
+  }
+  return <h1>Hello, Stranger.</h1>;
+}
+    </script>
+</body>
+</html>
